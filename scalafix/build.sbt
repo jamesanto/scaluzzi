@@ -26,7 +26,10 @@ skip in publish := true
 
 lazy val rules = project.settings(
   libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % V.scalafix,
-  moduleName := "scaluzzi"
+  moduleName := "scaluzzi",
+  version := "0.1.7.2-SNAPSHOT",
+  credentials += Credentials("Sonatype Nexus Repository Manager", "127.0.0.1", "admin", "admin"),
+  publishTo := Some("Sonatype Nexus Repository Manager" at "http://127.0.0.1:8081/repository/maven-snapshots")
 )
 
 lazy val input = project
